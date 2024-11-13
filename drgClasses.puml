@@ -1,0 +1,97 @@
+@startuml C4_Elements
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+class Engine {
+    -Sala salaCorrente
+    --
+    +void criaCenario()
+    +void jogar()
+}
+
+class Mochila {
+    -String: capacidadeMaxima
+    -List<Ferramenta>: ferramentas
+    --
+    +void adicionarFerramenta()
+    +void removerFerramenta()
+}
+
+class Ferramenta {
+    -String : nome
+    --
+    +abstract void usarFerramenta()
+}
+
+class FerramentaDescartavel extends Ferramenta {
+    -Boolean foiUsado
+    --
+    +void usarFerramenta()
+}
+
+class FerramentaComEnergia extends Ferramenta {
+    -int carga
+    --
+    +void carregarFerramenta()
+    +void usarFerramenta()
+}
+
+class Objeto {
+    -String nome
+    -Boolean acaoOk
+    -String descricaoAntesAcao
+    -String descricaoDepoisAcao
+    --
+    +abstract String descricao()
+}
+
+class ObjetoDescartavel extends Objeto {
+    -Boolean inutilizavel
+    --
+    +void usarObjeto()
+}
+
+class Sala {
+    -String nome
+    -Map objetos
+    -Map ferramentas
+    -Map portas
+    -Engine engine
+    --
+    +void pegarFerramenta()
+    +void usarFerramenta()
+    +void sair()
+    +void usarObjeto()
+}
+
+class SalaSecreta extends Sala {
+    -Boolean destrancada
+    --
+    +void destrancar(String ferramenta)
+    +void entrar()
+}
+
+
+'Ferramentas
+class Lanterna extends FerramentaComEnergia
+class Chave extends FerramentaDescartavel
+class Martelo extends Ferramenta
+
+'Objetos
+class Pote extends ObjetoDescartavel
+class Espelho extends Objeto
+class Estatua extends Objeto
+class Pintura extends Objeto
+class Estante extends Objeto
+class Cofre extends Objeto
+class Pilhas extends Objeto
+
+'Salas
+class Biblioteca extends Sala
+class Porao extends SalaSecreta
+class SalaEstar extends Sala
+class Jardim extends Sala
+class Quarto extends Sala
+
+Engine <|-- Jogodemo
+
+@enduml
