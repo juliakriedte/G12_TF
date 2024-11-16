@@ -44,12 +44,6 @@ class Objeto {
     +abstract String descricao()
 }
 
-class ObjetoDescartavel extends Objeto {
-    -Boolean inutilizavel
-    --
-    +void usarObjeto()
-}
-
 class Sala {
     -String nome
     -Map objetos
@@ -77,7 +71,7 @@ class Chave extends FerramentaDescartavel
 class Martelo extends Ferramenta
 
 'Objetos
-class Pote extends ObjetoDescartavel
+class Pote extends Objeto
 class Espelho extends Objeto
 class Estatua extends Objeto
 class Pintura extends Objeto
@@ -92,6 +86,6 @@ class SalaEstar extends Sala
 class Jardim extends Sala
 class Quarto extends Sala
 
-Engine <|-- Jogodemo
+Engine <|-- Jogo
 
 @enduml
