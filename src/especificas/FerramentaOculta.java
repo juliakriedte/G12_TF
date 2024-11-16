@@ -6,7 +6,7 @@ public abstract class FerramentaOculta extends Ferramenta{
     public FerramentaOculta(String nome) {
         super(nome);
     }
-    public void tornaVisivel(){
+    public void revela(){
         this.visivel = true;
     }
 }

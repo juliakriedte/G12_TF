@@ -8,7 +8,7 @@ public abstract class ObjetoOculto extends Objeto{
         this.visivel = false;
     }
 
-    public void tornaVisivel(){
+    public void revela(){
         this.visivel = true;
     }
 }

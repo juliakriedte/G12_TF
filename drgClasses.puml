@@ -57,7 +57,7 @@ class Sala {
     +void usarObjeto()
 }
 
-class SalaSecreta extends Sala {
+class SalaOculta extends Sala {
     -Boolean destrancada
     --
     +void destrancar(String ferramenta)
@@ -81,7 +81,7 @@ class Pilhas extends Objeto
 
 'Salas
 class Biblioteca extends Sala
-class Porao extends SalaSecreta
+class Porao extends SalaOculta
 class SalaEstar extends Sala
 class Jardim extends Sala
 class Quarto extends Sala
