@@ -1,5 +1,5 @@
 package Jogo;
-
+//teste comit pelo GitHub
 import Jogo.Salas.Cozinha;
 import Jogo.Salas.HallEntrada;
 import Jogo.Salas.Quarto;
