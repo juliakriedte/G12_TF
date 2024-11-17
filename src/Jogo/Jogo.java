@@ -1,5 +1,5 @@
 package Jogo;
-
+//teste1
 import Jogo.Salas.Cozinha;
 import Jogo.Salas.HallEntrada;
 import Jogo.Salas.Quarto;
