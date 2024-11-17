@@ -12,6 +12,10 @@ public class Lanterna extends FerramentaEnergia{
 
     @Override
     public boolean usar() {
+        if (isSemEnergia()) {
+            return false;
+        }
+        super.usar();
         return true;
-    } 
+    }
 }
