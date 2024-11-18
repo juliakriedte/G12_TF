@@ -1,5 +1,7 @@
 package basicas;
 
+import especificas.FerramentaOculta;
+import especificas.ObjetoIluminavel;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -43,6 +45,11 @@ public abstract class Sala {
     public List<String> objetosDisponiveis() {
         List<String> descricoes = new ArrayList<>();
         for (Objeto obj : objetos.values()) {
+            if (obj instanceof ObjetoIluminavel){
+                if (((ObjetoIluminavel) obj).visivel){
+                    descricoes.add(obj.getNome() + ": " + obj.getDescricao());
+                }
+            }
             descricoes.add(obj.getNome() + ": " + obj.getDescricao());
         }
         return descricoes;
@@ -51,7 +58,13 @@ public abstract class Sala {
     public List<String> ferramentasDisponiveis() {
         List<String> nomes = new ArrayList<>();
         for (Ferramenta fer : ferramentas.values()) {
-            nomes.add(fer.getNome());
+            if (fer instanceof FerramentaOculta){
+                if (((FerramentaOculta) fer).visivel){
+                    nomes.add(fer.getNome());
+                }
+            } else {
+                nomes.add(fer.getNome());                
+            }
         }
         return nomes;
     }

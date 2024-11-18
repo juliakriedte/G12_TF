@@ -1,6 +1,6 @@
 package Jogo.Salas;
 
-import Jogo.Objetos.Armario;
+import Jogo.Objetos.Quadro;
 import basicas.Engine;
 import basicas.Objeto;
 import basicas.Sala;
@@ -12,7 +12,7 @@ import basicas.Sala;
 public class SalaDeEstar extends Sala {
     public SalaDeEstar(Engine engine) {
         super("Sala_de_Estar", engine);
-        Objeto armario = new Armario();
+        Objeto armario = new Quadro();
         this.getObjetos().put(armario.getNome(), armario);
     }
 
