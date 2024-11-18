@@ -11,7 +11,7 @@ public class Biblioteca extends Sala {
         super("Biblioteca", engine);
 
 
-
+       //a
         //Objeto poteAcucar = new PoteDeAcucar();
         //this.getObjetos().put(poteAcucar.getNome(), poteAcucar);
         //Objeto poteArroz = new PoteDeArroz();
