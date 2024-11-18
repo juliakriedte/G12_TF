@@ -7,6 +7,8 @@ import basicas.Objeto;
 import Jogo.Ferramentas.Chave;
 import Jogo.Objetos.Bilhete;
 
+
+
 public class Quarto extends Sala {
     public Quarto(Engine engine) {
         super("Quarto", engine);

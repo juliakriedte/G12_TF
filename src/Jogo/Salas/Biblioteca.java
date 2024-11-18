@@ -1,18 +1,21 @@
 package Jogo.Salas;
 
 import Jogo.Objetos.PoteDeAcucar;
-import Jogo.Objetos.PoteDeArroz;
+//import Jogo.Objetos.PoteDeArroz;
 import basicas.Engine;
 import basicas.Objeto;
 import basicas.Sala;
 
-public class Cozinha extends Sala {
-    public Cozinha(Engine engine) {
-        super("Cozinha", engine);
-        Objeto poteAcucar = new PoteDeAcucar();
-        this.getObjetos().put(poteAcucar.getNome(), poteAcucar);
-        Objeto poteArroz = new PoteDeArroz();
-        this.getObjetos().put(poteArroz.getNome(), poteArroz);
+public class Biblioteca extends Sala {
+    public Biblioteca(Engine engine) {
+        super("Biblioteca", engine);
+
+
+
+        //Objeto poteAcucar = new PoteDeAcucar();
+        //this.getObjetos().put(poteAcucar.getNome(), poteAcucar);
+        //Objeto poteArroz = new PoteDeArroz();
+       // this.getObjetos().put(poteArroz.getNome(), poteArroz);
     }
 
     @Override
