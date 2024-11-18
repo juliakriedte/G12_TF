@@ -14,7 +14,7 @@ public class Quarto extends Sala {
         super("Quarto", engine);
         Ferramenta chave = new Chave();
         this.getFerramentas().put(chave.getNome(), chave);
-        Objeto bilhete = new Bilhete();
+        //Objeto bilhete = new Bilhete();
         this.getObjetos().put(bilhete.getNome(), bilhete);
     }
 
