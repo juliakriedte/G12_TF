@@ -80,7 +80,8 @@ public abstract class Engine {
                     System.out.println("Comando desconhecido: " + tokens[0]);
                     break;
             }
-        }
+        
+    }
         System.out.println("Jogo encerrado!");
         scanner.close();
     }
