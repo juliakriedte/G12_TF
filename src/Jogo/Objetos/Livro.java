@@ -1,21 +1,21 @@
 package Jogo.Objetos;
+import Jogo.Ferramentas.Lupa;
 import basicas.Ferramenta;
-import basicas.Objeto;
+import especificas.ObjetoOculto;
 
-public class Livro extends Objeto {
-    public static boolean visivel;
+public class Livro extends ObjetoOculto {
     public Livro() {
 		super("Livro", "", "O título do livro é: ''"); // Escrever algo
 		this.setAcaoOk(true);
 		visivel = false;
 	}
 
+	@Override
 	public boolean usar(Ferramenta ferramenta) {
-		this.setAcaoOk(true);
-		return true;
+		if (ferramenta instanceof Lupa) {
+			this.setAcaoOk(true);
+			return true;
+		}
+		return false;
 	}
-
-	public static void revela(){
-        visivel = true;
-    }
 }

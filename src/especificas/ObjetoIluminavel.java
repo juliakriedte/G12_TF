@@ -14,10 +14,14 @@ public abstract class ObjetoIluminavel extends Objeto{
         this.visivel = true;
     }
 
+    public boolean isVisivel(){
+        return visivel;
+    }
+
     @Override
 	public boolean usar(Ferramenta ferramenta) {
-		if (ferramenta instanceof Lanterna) {
-			if(!((Lanterna) ferramenta).isSemEnergia()){
+		if (ferramenta instanceof Lanterna lanterna) {
+			if(!lanterna.isSemEnergia()){
 				this.setAcaoOk(true);
 				this.visivel = true;		
 				return true;		

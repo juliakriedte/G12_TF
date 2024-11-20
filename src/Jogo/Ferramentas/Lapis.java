@@ -8,10 +8,6 @@ public class Lapis extends FerramentaOculta{
 
     @Override
     public boolean usar() {
-        if (visivel) { 
-            return true;
-        } else {
-            return false; 
-        }
+        return visivel;
     }
 }
