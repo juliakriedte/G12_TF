@@ -7,6 +7,7 @@ public abstract class FerramentaDescartavel extends Ferramenta{
         super(nome);
         this.usado = false;
     }
+
     @Override
     public boolean usar() {
         if (!usado) {
@@ -15,6 +16,7 @@ public abstract class FerramentaDescartavel extends Ferramenta{
         }
         return false;
     }
+    
     public boolean isUsado() {
         return usado;
     }

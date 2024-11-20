@@ -6,16 +6,22 @@ import especificas.FerramentaDescartavel;
 */
 
 public class Chave extends FerramentaDescartavel {
-    // Construtor
+    public boolean visivel;
     public Chave() {
         super("Chave de Ouro");
+        visivel = false;
+    }
+
+    public void revela(){
+        this.visivel = true;
+    }
+    
+    public boolean isVisivel(){
+        return visivel;
     }
 
     @Override
     public boolean usar() {
-        if (super.usar()) {
-            return true;
-        }
-        return false;
+        return super.usar();
     }
 }

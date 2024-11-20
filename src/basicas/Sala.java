@@ -1,5 +1,10 @@
 package basicas;
 
+import Jogo.Ferramentas.Chave;
+import especificas.FerramentaDescartavel;
+import especificas.FerramentaOculta;
+import especificas.ObjetoIluminavel;
+import especificas.ObjetoOculto;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -43,7 +48,17 @@ public abstract class Sala {
     public List<String> objetosDisponiveis() {
         List<String> descricoes = new ArrayList<>();
         for (Objeto obj : objetos.values()) {
-            descricoes.add(obj.getNome() + ": " + obj.getDescricao());
+            if (obj instanceof ObjetoIluminavel){
+                if (((ObjetoIluminavel) obj).isVisivel()){
+                    descricoes.add(obj.getNome() + ": " + obj.getDescricao());
+                }
+            } else if (obj instanceof ObjetoOculto){
+                if (((ObjetoOculto) obj).isVisivel()){
+                    descricoes.add(obj.getNome() + ": " + obj.getDescricao());
+                }
+            } else{
+                descricoes.add(obj.getNome() + ": " + obj.getDescricao());
+            }
         }
         return descricoes;
     }
@@ -51,7 +66,21 @@ public abstract class Sala {
     public List<String> ferramentasDisponiveis() {
         List<String> nomes = new ArrayList<>();
         for (Ferramenta fer : ferramentas.values()) {
-            nomes.add(fer.getNome());
+            if (fer instanceof FerramentaOculta){
+                if (((FerramentaOculta) fer).isVisivel()){
+                    nomes.add(fer.getNome());
+                }
+            } else if (fer instanceof FerramentaDescartavel){
+                if (fer instanceof Chave){
+                    if(!(((Chave) fer).isUsado()) && (((Chave) fer).isVisivel())){
+                        nomes.add(fer.getNome());
+                    }
+                } else if (((FerramentaDescartavel) fer).isUsado()){
+                    nomes.add(fer.getNome());
+                }
+            } else {
+                nomes.add(fer.getNome());                
+            }
         }
         return nomes;
     }

@@ -26,7 +26,7 @@ public abstract class FerramentaEnergia extends Ferramenta {
     @Override
     public boolean usar() {
         if (energiaAtual-0.5 < 0) {
-            throw new IllegalArgumentException("Energia insuficiente para essa operação.");
+            return false;
         }
         energiaAtual -= 0.5;
         return true;

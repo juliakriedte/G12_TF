@@ -5,7 +5,6 @@ import basicas.Sala;
 import basicas.Ferramenta;
 import basicas.Objeto;
 import Jogo.Ferramentas.Chave;
-import Jogo.Objetos.Bilhete;
 
 
 
@@ -14,8 +13,8 @@ public class Quarto extends Sala {
         super("Quarto", engine);
         Ferramenta chave = new Chave();
         this.getFerramentas().put(chave.getNome(), chave);
-        Objeto bilhete = new Bilhete();
-        this.getObjetos().put(bilhete.getNome(), bilhete);
+        // Objeto bilhete = new Bilhete();
+        // this.getObjetos().put(bilhete.getNome(), bilhete);
     }
 
     @Override

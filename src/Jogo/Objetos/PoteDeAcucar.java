@@ -9,6 +9,7 @@ public class PoteDeAcucar extends Objeto {
 			  "O pote de açúcar esta quebrado. Tem uma nova ferramenta dentro!");
 	}
 
+	@Override
 	public boolean usar(Ferramenta ferramenta) {
 		if (ferramenta instanceof Martelo) {
 			this.setAcaoOk(true);
