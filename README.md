@@ -31,12 +31,12 @@ Linguagem de Programação: Java ☕
 
     Sistema operacional
     Java
-    Extenção PlantUML
+    Extensão PlantUML
 
 ## 🕹️COMO INICIAR O PROJETO:
 
-Abrindo o arquivo executável ''Nome do Arquivo executavel "
-Para visualizar o Digrama de Classes execute o drgClasses.puml
+Abrindo o arquivo executável ''Nome do Arquivo executável "
+Para visualizar o Diagrama de Classes execute o drgClasses.puml
 
 ## 🗓️ VERSÃO ou DATA:
 
