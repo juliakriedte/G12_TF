@@ -44,7 +44,7 @@ Para visualizar o Diagrama de Classes execute o drgClasses.puml
 
 ## 🧑‍💻 Autores
 
-Augusto Fisch, Bernardo Garcia Fensterseifer, Guilherme Sanches Cavazzotto, Júlia Yume
+Augusto Fisch, Bernardo Garcia Fensterseifer, Guilherme Sanches Cavazzotto, Júlia Yume, Diogo Giacoboni
 
 ### 🤗Notas de Agradecimento:
 
