@@ -1,8 +1,8 @@
-# 💎 TÍTULO DO PROJETO: Jogo - **Adventure RPG: A Busca pelo Diamante da Sabedoria**
+#  A Busca pelo Diamante da Sabedoria 💎**
 
 ## 📋 Objetivo do Projeto
 
-Desenvolver um jogo no estilo **Adventure RPG** ⚔️, onde o jogador assume o papel de um arqueólogo renomado em busca do **Diamante da Sabedoria**. Este diamante místico é escondido pelo excêntrico Conde Domingos em sua mansão, e somente os mais habilidosos e determinados podem encontrar o tesouro. O jogo oferece liberdade de escolha, e o jogador deve explorar, resolver enigmas e interagir com objetos para alcançar seu objetivo.
+Desenvolver um jogo no estilo **Adventure RPG** que oferece liberdade de escolha, permitindo que o jogador explore, resolva enigmas e interaja com objetos e ferramentas para alcançar seu objetivo.
 
 ## 🔍 Enredo
 
@@ -13,6 +13,28 @@ Você deve explorar as salas da mansão, coletar ferramentas, interagir com obje
 ## ⚔️ Como Funciona o Jogo
 
 O jogo é composto por um labirinto de 6 salas interligadas. O jogador deve coletar ferramentas, resolver enigmas e usar itens de forma estratégica para alcançar seu objetivo. O jogo também inclui uma mochila com capacidade limitada de 3 itens.
+
+## 🎮 Comandos do Jogo
+
+Aqui estão os comandos disponíveis para interação no jogo:
+
+1. **fim**  
+   Encerra o jogo imediatamente.
+
+2. **pega [item]**  
+   Pega um item da sala e adiciona à mochila. Exemplo: `pega Lanterna`.
+
+3. **inventario**  
+   Exibe os itens disponíveis na mochila para uso.
+
+4. **usa [item]**  
+   Usa um item da mochila ou da sala, conforme permitido. Exemplo: `usa Lanterna`.
+
+5. **vai [sala]**  
+   Muda para uma sala diferente. Exemplo: `vai Biblioteca` ou `vai Cozinha`.
+
+6. **[comando desconhecido]**  
+   Exibe uma mensagem de erro se o comando não for reconhecido.
 
 ### **Salas**
 
@@ -79,8 +101,8 @@ O jogo é composto por um labirinto de 6 salas interligadas. O jogador deve cole
 
 ## 🧑‍💻 Autores
 
-
-- Diogo Giacoboni- Augusto Fisch
+- Augusto Fisch
+- Diogo Giacoboni
 - Bernardo Garcia Fensterseifer
 - Julia Yume Nagahama Kriedte
 - Guilherme Sanches Cavazzotto
