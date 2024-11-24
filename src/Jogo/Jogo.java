@@ -1,4 +1,5 @@
 package Jogo;
+
 import Jogo.Salas.Biblioteca;
 import Jogo.Salas.Cozinha;
 import Jogo.Salas.Jardim;
@@ -8,17 +9,14 @@ import Jogo.Salas.SalaDeEstar;
 import basicas.Engine;
 import basicas.Sala;
 
-public class Jogo extends Engine 
-{
+public class Jogo extends Engine {
 
-    public Jogo() 
-    {
+    public Jogo() {
         super();
     }
 
     @Override
-    public void criaCenario() 
-    {
+    public void criaCenario() {
         // Define as salas que compõem o mapa
         Sala jardim = new Jardim(this);
         Sala biblioteca = new Biblioteca(this);
@@ -49,10 +47,16 @@ public class Jogo extends Engine
         this.setSalaCorrente(salaDeEstar);
     }
 
-    public static void main(String args[])
-    {
-        Jogo jd = new Jogo();
-        jd.joga();
+    public static void main(String args[]) {
+        boolean jogar_de_novo = true;
+        while (jogar_de_novo) {
+            Jogo jd = new Jogo();
+            if (jd.joga()) {
+                jogar_de_novo = false;
+            } else {
+                System.out.println("Reiniciando jogo...");
+            }
+        }
     }
 
 }

@@ -1,4 +1,4 @@
-#  A Busca pelo Diamante da Sabedoria 💎**
+# A Busca pelo Diamante da Sabedoria 💎\*\*
 
 ## 📋 Objetivo do Projeto
 
@@ -48,6 +48,8 @@ Aqui estão os comandos disponíveis para interação no jogo:
 ### **Ferramentas**
 
 - **Lanterna** (Biblioteca): Revela mensagens e objetos ocultos em locais escuros.
+  Quando usada, gasta 1 nivel de bateria. Se acabar a bateria, o jogo é perdido. Usar ela com uma pilha
+  na sala, irá recarregá-la.
 - **Martelo** (Quarto): Usado para quebrar objetos, como potes e estátuas.
 - **Chave de Ouro** (Jardim): Abre o cofre onde o Diamante está escondido.
 - **Lupa** (Sala de Estar): Usada para examinar a pintura do Barão e ler o livro na Biblioteca.
@@ -106,7 +108,6 @@ Aqui estão os comandos disponíveis para interação no jogo:
 - Bernardo Garcia Fensterseifer
 - Julia Yume Nagahama Kriedte
 - Guilherme Sanches Cavazzotto
-
 
 ### 🤗 Notas de Agradecimento
 

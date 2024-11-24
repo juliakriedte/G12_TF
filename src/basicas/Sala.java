@@ -121,6 +121,9 @@ public abstract class Sala {
 
     public boolean usa(Ferramenta f) {
         boolean usado = false;
+        if (!f.usar()) {
+            return false;
+        }
         for (Objeto obj : getObjetos().values()) {
             usado |= obj.usar(f);
         }

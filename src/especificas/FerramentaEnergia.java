@@ -1,14 +1,15 @@
 package especificas;
+
 import basicas.Ferramenta;
 
 public abstract class FerramentaEnergia extends Ferramenta {
-    private double energiaAtual;
-    private double capacidadeMaxima;
+    private int energiaAtual;
+    private int capacidadeMaxima;
 
     public FerramentaEnergia(String nome) {
         super(nome);
         this.capacidadeMaxima = 5;
-        this.energiaAtual = 3; 
+        this.energiaAtual = 3;
     }
 
     public double getEnergiaAtual() {
@@ -25,14 +26,16 @@ public abstract class FerramentaEnergia extends Ferramenta {
 
     @Override
     public boolean usar() {
-        if (energiaAtual-0.5 < 0) {
+        if (energiaAtual == 0) {
             return false;
         }
-        energiaAtual -= 0.5;
+        energiaAtual -= 1;
+        System.out.println("A energia de " + getNome() + " é: " + getEnergiaAtual());
         return true;
     }
 
     public void recarregar() {
         energiaAtual = capacidadeMaxima;
+        System.out.println("A energia de " + getNome() + " é: " + getEnergiaAtual());
     }
 }

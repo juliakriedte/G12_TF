@@ -2,6 +2,8 @@ package basicas;
 
 import java.util.Scanner;
 
+import Jogo.Ferramentas.Lanterna;
+
 public abstract class Engine {
     private Mochila mochila;
     private Sala salaCorrente;
@@ -34,8 +36,22 @@ public abstract class Engine {
 
     public abstract void criaCenario();
 
-    public void joga() {
+    /// Retorna true na vitoria, false na derrota
+    public boolean joga() {
         while (!fim) {
+            Ferramenta fe = getMochila().buscarFerramenta("Lanterna");
+            if (fe != null) {
+                Lanterna l = (Lanterna) fe;
+                if (l.isSemEnergia()) {
+                    System.out.println("A energia da sua lanterna acabou.");
+                    System.out.println("Você, frustrado, joga ela na parede com força.");
+                    System.out.println(
+                            "Ops. Você deu azar. A parede que você tacou estava muito fragil e a casa desmorona em cima de você.");
+                    System.out.println("Você perdeu. Tente novamente.");
+                    System.out.println("Na próxima, não fique sem bateria.");
+                    return false;
+                }
+            }
             System.out.println("-------------------------");
             System.out.println(salaCorrente.textoDescricao());
             System.out.print("O que você deseja fazer? ");
@@ -61,7 +77,6 @@ public abstract class Engine {
                     if (f == null) {
                         System.out.println("Ferramenta não existe.");
                     } else if (salaCorrente.usa(f)) {
-                        System.out.println("Feito!!");
                         if (fim) {
                             System.out.println("Parabéns, você venceu!");
                         }
@@ -84,5 +99,6 @@ public abstract class Engine {
         }
         System.out.println("Jogo encerrado!");
         scanner.close();
+        return true;
     }
 }

@@ -14,7 +14,7 @@ public abstract class ObjetoDescartavel extends Objeto {
 
     @Override
     public boolean usar(Ferramenta ferramenta) {
-        if (ferramenta instanceof Martelo && !usado) {
+        if (!usado) {
             usado = true;
             return true;
         }
