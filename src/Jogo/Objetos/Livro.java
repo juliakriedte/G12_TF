@@ -5,7 +5,7 @@ import especificas.ObjetoOculto;
 
 public class Livro extends ObjetoOculto {
     public Livro() {
-		super("Livro", "", "O título do livro é: ''"); // Escrever algo
+		super("Livro", "", "O título do livro é: 'Onde a terra floresce, o mistério aguarda'");
 		this.setAcaoOk(true);
 		visivel = false;
 	}

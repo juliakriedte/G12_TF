@@ -1,33 +1,44 @@
 package Jogo.Salas;
 
+import Jogo.Ferramentas.Lanterna;
+import Jogo.Objetos.Espelho;
+import Jogo.Objetos.EstanteLivros;
 import Jogo.Objetos.PoteDeAcucar;
-//import Jogo.Objetos.PoteDeArroz;
 import basicas.Engine;
+import basicas.Ferramenta;
 import basicas.Objeto;
 import basicas.Sala;
 
-public class Biblioteca extends Sala {
-    public Biblioteca(Engine engine) {
+// falta incrementar metodos pra entrar ir das salas(interagir com as portas)
+
+public class Biblioteca extends Sala 
+{
+
+    public Biblioteca(Engine engine) 
+    {
         super("Biblioteca", engine);
-
-
-       //a
-        //Objeto poteAcucar = new PoteDeAcucar();
-        //this.getObjetos().put(poteAcucar.getNome(), poteAcucar);
-        //Objeto poteArroz = new PoteDeArroz();
-       // this.getObjetos().put(poteArroz.getNome(), poteArroz);
+        Ferramenta lanterna = new Lanterna();
+        this.getFerramentas().put(lanterna.getNome(), lanterna);
+        Objeto espelho = new Espelho();
+        this.getObjetos().put(espelho.getNome(), espelho);
+        Objeto estanteLivros = new EstanteLivros();
+        this.getObjetos().put(estanteLivros.getNome(), estanteLivros);
     }
 
     @Override
-    public boolean usa(String objeto) {
+    public boolean usa(String objeto) 
+    {
+        // ajustar dps
         if (!this.getObjetos().containsKey(objeto)) {
             return false;
         }
         Objeto pote = this.getObjetos().get(objeto);
         boolean usou = pote.usar(this.getEngine().getMochila());
-        if (pote instanceof PoteDeAcucar && usou) {
+        if (pote instanceof PoteDeAcucar) {
+            if (((PoteDeAcucar) pote).isUsado())
             this.getEngine().indicaFimDeJogo();
         }
         return usou;
     }
+
 }

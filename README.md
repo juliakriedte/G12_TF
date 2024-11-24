@@ -1,51 +1,91 @@
-# 💎TÍTULO DO PROJETO: Jogo
+# 💎 TÍTULO DO PROJETO: Jogo - **Adventure RPG: A Busca pelo Diamante da Sabedoria**
 
-## 📋OBJETIVO DO PROJETO:
+## 📋 Objetivo do Projeto
 
-Desenvolver um jogo no estilo **Adventure RPG** ⚔️, onde o jogador deve encontrar um diamante escondido para garantir a vitória. O jogo oferece liberdade de escolha, permitindo que o jogador tome decisões estratégicas. Essas escolhas influenciam o progresso, e as ações corretas podem facilitar o caminho até o objetivo final. O jogador será desafiado a explorar, interagir com objetos e usar ferramentas de maneira inteligente para alcançar a vitória.
+Desenvolver um jogo no estilo **Adventure RPG** ⚔️, onde o jogador assume o papel de um arqueólogo renomado em busca do **Diamante da Sabedoria**. Este diamante místico é escondido pelo excêntrico Conde Domingos em sua mansão, e somente os mais habilidosos e determinados podem encontrar o tesouro. O jogo oferece liberdade de escolha, e o jogador deve explorar, resolver enigmas e interagir com objetos para alcançar seu objetivo.
 
-## ⚔️Como funciona o jogo:
+## 🔍 Enredo
 
-O jogo é composto por apenas um jogador (o usuário), uma mochila, salas, ferramentas e objetos.
+Você é um arqueólogo de renome que parte em uma expedição em busca do **Diamante da Sabedoria**, um tesouro lendário que concede grande sabedoria e prosperidade a quem o possuir. Sua jornada o leva à mansão misteriosa de **Conde Domingos**, um excêntrico nobre que escondeu o diamante e deixou uma série de armadilhas e enigmas para garantir que apenas aqueles dignos pudessem encontrá-lo.
 
-    -Ferramentas: Itens que o jogador pode pegar durante o jogo e usar em objetos para ajudá-lo a finalizar o jogo.
-    -Objetos: Elementos com os quais o jogador deve interagir, com ou sem o uso de ferramentas, para descobrir seu propósito.
-    -Mochila: Lugar onde o jogador pode guardar os itens coletado
+Você deve explorar as salas da mansão, coletar ferramentas, interagir com objetos e resolver o mistério que guarda o **Diamante da Sabedoria**.
 
-## 🔍 Funcionalidades
+## ⚔️ Como Funciona o Jogo
 
-Liste as principais funcionalidades do jogo, como:
+O jogo é composto por um labirinto de 6 salas interligadas. O jogador deve coletar ferramentas, resolver enigmas e usar itens de forma estratégica para alcançar seu objetivo. O jogo também inclui uma mochila com capacidade limitada de 3 itens.
 
-    Navegação entre salas
-    Interação com objetos e ferramentas
-    Mecanismos de vitória ou derrota
-    Armazenamento de itens na mochila
+### **Salas**
 
-## 🛠️ Construído com
+- **Sala de Estar**: Ponto de entrada com acesso para a Cozinha, Jardim e Biblioteca.
+- **Biblioteca**: Contém estantes de livros com pistas ocultas e conecta-se à Sala de Estar e ao Quarto.
+- **Quarto**: Contém pistas e objetos importantes, conecta-se ao Porão.
+- **Porão**: Local onde o diamante está escondido, acessado através do Quarto.
+- **Cozinha**: Contém armadilhas e pistas falsas, conecta-se à Sala de Estar e ao Jardim.
+- **Jardim**: Pátio misterioso com uma estátua que guarda uma ferramenta crucial, conecta-se à Sala de Estar e à Cozinha.
 
-IDE : Visual Studio Code
-Software De Versionamento: GitHub
-Linguagem de Programação: Java ☕
+### **Ferramentas**
+
+- **Lanterna** (Biblioteca): Revela mensagens e objetos ocultos em locais escuros.
+- **Martelo** (Quarto): Usado para quebrar objetos, como potes e estátuas.
+- **Chave de Ouro** (Jardim): Abre o cofre onde o Diamante está escondido.
+- **Lupa** (Sala de Estar): Usada para examinar a pintura do Barão e ler o livro na Biblioteca.
+
+### **Objetos e Funcionalidades**
+
+- **Espelho** (Biblioteca): Revela uma pista falsa quando iluminado pela lanterna.
+- **Estante de Livros** (Biblioteca): Esconde um livro com uma pista essencial, visível apenas com a lanterna.
+- **Pote Misterioso** (Cozinha): Contém uma pista falsa ou ferramenta (lápis), precisa ser quebrado com o martelo.
+- **Estátua do Barão** (Jardim): Revela a Chave de Ouro quando iluminada pela lanterna.
+- **Cofre Pequeno** (Porão): Guardado na Sala Secreta, protegido pela Chave de Ouro, contém o Diamante Escarlate.
+- **Pintura do Barão** (Quarto): Ao ser examinada com a lupa, revela uma sala oculta.
+- **Pilhas** (Sala de Estar): Recarregam a lanterna.
+
+### **Caminho para Vencer**
+
+1. **Biblioteca**: Use a lanterna na estante para localizar o livro com uma pista essencial para o Jardim.
+2. **Jardim**: Ilumine a estátua com a lanterna para obter a Chave de Ouro.
+3. **Quarto**: Examine a pintura do Barão com a lupa para revelar uma sala secreta.
+4. **Porão**: Acesse a sala secreta e use a Chave de Ouro para abrir o cofre e obter o **Diamante Escarlate**.
+
+### **Características e Elementos Específicos**
+
+- **Mochila**: O jogador pode carregar até 3 itens ao mesmo tempo. A mochila é essencial para gerenciar ferramentas e objetos durante o jogo.
+- **Objetos Descartáveis**: O **Pote Misterioso** pode ser descartado após ser quebrado. A **Chave de Ouro** pode ser usada apenas uma vez.
+- **Controle de Energia**: A **Lanterna** possui uma carga limitada, que pode ser recarregada com pilhas.
+- **Possibilidades de Derrota**: O jogador pode ficar sem pilhas e não conseguir recarregar a lanterna, impedindo o progresso.
+
+## 🛠️ Tecnologias Utilizadas
+
+- **IDE**: Visual Studio Code
+- **Software de Versionamento**: GitHub
+- **Linguagem de Programação**: Java ☕
 
 ## 📑 Requisitos
 
-    Sistema operacional
-    Java
-    Extensão PlantUML
+- **Sistema Operacional**: Windows
+- **Java**: Não é necessário. O jogo é executável como um arquivo `.exe`.
+- **Extensão PlantUML**: Para visualizar o diagrama de classes, instale a extensão PlantUML.
 
-## 🕹️COMO INICIAR O PROJETO:
+## 🕹️ Como Iniciar o Jogo
 
-Abrindo o arquivo executável ''Nome do Arquivo executável "
-Para visualizar o Diagrama de Classes execute o drgClasses.puml
+1. **Baixe o arquivo `.exe`** do jogo.
+2. **Clique duas vezes** no arquivo para iniciar o jogo.
+3. **Se aparecer um aviso de segurança**, confirme que deseja executar o arquivo.
+4. **Aproveite o jogo!**
 
-## 🗓️ VERSÃO ou DATA:
+## 🗓️ Versão
 
-20/11/2024
+**Versão 1.0**: 24/11/2024
 
 ## 🧑‍💻 Autores
 
-Augusto Fisch, Bernardo Garcia Fensterseifer, Guilherme Sanches Cavazzotto, Júlia Yume, Diogo Giacoboni
 
-### 🤗Notas de Agradecimento:
+- Diogo Giacoboni- Augusto Fisch
+- Bernardo Garcia Fensterseifer
+- Julia Yume Nagahama Kriedte
+- Guilherme Sanches Cavazzotto
 
-    Gostaríamos de agradecer a todos que contribuíram para a realização deste projeto. Agradecemos aos professores pelo apoio e ensinamentos, aos colegas pelo incentivo e troca de ideias. Nosso sincero obrigado a todos que ajudaram, direta ou indiretamente, no desenvolvimento deste trabalho!
+
+### 🤗 Notas de Agradecimento
+
+Gostaríamos de agradecer a todos que contribuíram para a realização deste projeto. Agradecemos aos professores pelo apoio e ensinamentos, aos colegas pelo incentivo e troca de ideias. Nosso sincero obrigado a todos que ajudaram, direta ou indiretamente, no desenvolvimento deste trabalho!

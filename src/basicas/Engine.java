@@ -6,11 +6,13 @@ public abstract class Engine {
     private Ferramenta mochila;
     private Sala salaCorrente;
     private boolean fim;
+    private Scanner scanner;
 
     public Engine() {
         this.mochila = null;
         this.salaCorrente = null;
         this.fim = false;
+        scanner = new Scanner(System.in);        
         criaCenario();
     }
 
@@ -37,7 +39,6 @@ public abstract class Engine {
     public abstract void criaCenario();
 
     public void joga() {
-        Scanner scanner = new Scanner(System.in);
         while (!fim) {
             System.out.println("-------------------------");
             System.out.println(salaCorrente.textoDescricao());
@@ -68,8 +69,8 @@ public abstract class Engine {
                         System.out.println("Não é possível usar " + tokens[1] + " nesta sala");
                     }
                     break;
-                case "sai":
-                    Sala novaSala = salaCorrente.sai(tokens[1]);
+                case "vai":
+                    Sala novaSala = salaCorrente.vai(tokens[1]);
                     if (novaSala == null) {
                         System.out.println("Sala desconhecida ...");
                     } else {

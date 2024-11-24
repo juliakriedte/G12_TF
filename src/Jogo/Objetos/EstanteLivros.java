@@ -6,8 +6,8 @@ import especificas.ObjetoIluminavel;
 
 public class EstanteLivros extends ObjetoIluminavel {
     public EstanteLivros() {
-		super("Estante_de_Livros","A estante possui livros.",
-			  "O livro foi encontrado. ");
+		super("Estante_de_Livros","A estante possui livros, mas não é possivel enxergar pois está muito escuro.",
+			 "Você encontrou um livro que parece conter uma pista importante."); 
 	}
 	
 	public boolean usar(Ferramenta ferramenta, Objeto l) {

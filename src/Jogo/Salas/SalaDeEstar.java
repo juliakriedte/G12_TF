@@ -1,7 +1,9 @@
 package Jogo.Salas;
 
-import Jogo.Objetos.Quadro;
+import Jogo.Ferramentas.Lupa;
+import Jogo.Objetos.Pilha;
 import basicas.Engine;
+import basicas.Ferramenta;
 import basicas.Objeto;
 import basicas.Sala;
 
@@ -9,19 +11,24 @@ import basicas.Sala;
     Sala de Estar – Ponto de entrada com acesso para a Cozinha e Jardim.
 */
 
-public class SalaDeEstar extends Sala {
-    public SalaDeEstar(Engine engine) {
+public class SalaDeEstar extends Sala 
+{
+    public SalaDeEstar(Engine engine) 
+    {
         super("Sala_de_Estar", engine);
-        Objeto armario = new Quadro();
-        this.getObjetos().put(armario.getNome(), armario);
+        Objeto pilha = new Pilha();
+        this.getObjetos().put(pilha.getNome(), pilha);
+        Ferramenta lupa = new Lupa();
+        this.getFerramentas().put(lupa.getNome(), lupa);
     }
 
     @Override
-    public boolean usa(String nomeFerramenta) {
+    public boolean usa(String nomeFerramenta) 
+    {
         if (!this.getObjetos().containsKey(nomeFerramenta)) {
             return false;
         }
-        Objeto armario = this.getObjetos().get(nomeFerramenta);
-        return armario.usar(this.getEngine().getMochila());
+        Objeto pilha = this.getObjetos().get(nomeFerramenta);
+        return pilha.usar(this.getEngine().getMochila());
     }
 }

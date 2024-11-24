@@ -7,7 +7,7 @@ import especificas.ObjetoIluminavel;
 
 public class Espelho extends ObjetoIluminavel{
     public Espelho() {
-		super("Espelho","O espelho reflete a imagem.",
-			  "O espelho projeta uma mensagem: ''!"); // Colocar uma mensagem aqui
+		super("Espelho", "O espelho reflete a imagem, mas parece esconder algo mais.", 
+              "O espelho projeta a mensagem: 'O próximo passo está onde a fome encontra saciedade.'"); 
 	}
 }

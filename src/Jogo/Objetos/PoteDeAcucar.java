@@ -1,9 +1,9 @@
 package Jogo.Objetos;
 import Jogo.Ferramentas.Martelo;
 import basicas.Ferramenta;
-import basicas.Objeto;
+import especificas.ObjetoDescartavel;
 
-public class PoteDeAcucar extends Objeto {
+public class PoteDeAcucar extends ObjetoDescartavel {
 	public PoteDeAcucar() {
 		super("Pote_de_Acucar","O pote de açúcar esta fechado",
 			  "O pote de açúcar esta quebrado. Tem uma nova ferramenta dentro!");

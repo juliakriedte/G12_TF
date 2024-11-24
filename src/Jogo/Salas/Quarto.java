@@ -1,24 +1,28 @@
 package Jogo.Salas;
 
+import Jogo.Ferramentas.Martelo;
+import Jogo.Objetos.Quadro;
 import basicas.Engine;
-import basicas.Sala;
 import basicas.Ferramenta;
 import basicas.Objeto;
-import Jogo.Ferramentas.Chave;
+import basicas.Sala;
 
+public class Quarto extends Sala 
+{
 
-
-public class Quarto extends Sala {
-    public Quarto(Engine engine) {
+    public Quarto(Engine engine) 
+    {
         super("Quarto", engine);
-        Ferramenta chave = new Chave();
-        this.getFerramentas().put(chave.getNome(), chave);
-        // Objeto bilhete = new Bilhete();
-        // this.getObjetos().put(bilhete.getNome(), bilhete);
+        Ferramenta martelo = new Martelo();
+        this.getFerramentas().put(martelo.getNome(), martelo);
+        Objeto pintura = new Quadro();
+        this.getObjetos().put(pintura.getNome(), pintura);
     }
 
     @Override
-    public boolean usa(String nomeFerramenta) {
-        return false;
+    public boolean usa(String nomeFerramenta) { 
+        // implementar
+        return false; 
     }
+
 }

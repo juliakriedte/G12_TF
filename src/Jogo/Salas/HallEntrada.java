@@ -17,4 +17,3 @@ public class HallEntrada extends Sala {
         return false;
     }
 }
-

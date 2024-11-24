@@ -8,7 +8,7 @@ import especificas.ObjetoIluminavel;
 public class Estatua extends ObjetoIluminavel {
     public Estatua() {
 		super("Estatua","A estatua exibe a imagem do Barão.",
-			  "A estatua possui um compartimento secreto com uma nova ferramenta");
+			  "A estatua possui um compartimento secreto com uma nova ferramenta.");
 	}
 
 	public boolean usar(Ferramenta ferramenta, Ferramenta c) {

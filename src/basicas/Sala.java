@@ -1,9 +1,14 @@
 package basicas;
 
 import Jogo.Ferramentas.Chave;
+import basicas.Engine;
+import basicas.Ferramenta;
+import basicas.Objeto;
 import especificas.FerramentaDescartavel;
+import especificas.FerramentaDescartavelOculta;
 import especificas.FerramentaOculta;
 import especificas.ObjetoIluminavel;
+import especificas.ObjetoDescartavel;
 import especificas.ObjetoOculto;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,6 +61,10 @@ public abstract class Sala {
                 if (((ObjetoOculto) obj).isVisivel()){
                     descricoes.add(obj.getNome() + ": " + obj.getDescricao());
                 }
+            } else if (obj instanceof ObjetoDescartavel){
+                if (!((ObjetoDescartavel) obj).isUsado()){
+                    descricoes.add(obj.getNome() + ": " + obj.getDescricao());
+                }
             } else{
                 descricoes.add(obj.getNome() + ": " + obj.getDescricao());
             }
@@ -70,14 +79,16 @@ public abstract class Sala {
                 if (((FerramentaOculta) fer).isVisivel()){
                     nomes.add(fer.getNome());
                 }
-            } else if (fer instanceof FerramentaDescartavel){
-                if (fer instanceof Chave){
-                    if(!(((Chave) fer).isUsado()) && (((Chave) fer).isVisivel())){
+            } else if (fer instanceof FerramentaDescartavelOculta){
+                if (fer instanceof FerramentaDescartavelOculta){
+                    if(!(((Chave) fer).isUsado()) && (((FerramentaDescartavelOculta) fer).isVisivel())){
                         nomes.add(fer.getNome());
                     }
-                } else if (((FerramentaDescartavel) fer).isUsado()){
-                    nomes.add(fer.getNome());
-                }
+                } 
+            } else if (fer instanceof FerramentaDescartavel){
+                if (((FerramentaDescartavel) fer).isUsado()){
+                        nomes.add(fer.getNome());
+                }                
             } else {
                 nomes.add(fer.getNome());                
             }
@@ -103,7 +114,7 @@ public abstract class Sala {
         return false;
     }
 
-    public Sala sai(String porta) {
+    public Sala vai(String porta) {
         return portas.get(porta);
     }
 
