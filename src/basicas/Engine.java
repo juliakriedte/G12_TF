@@ -3,25 +3,21 @@ package basicas;
 import java.util.Scanner;
 
 public abstract class Engine {
-    private Ferramenta mochila;
+    private Mochila mochila;
     private Sala salaCorrente;
     private boolean fim;
     private Scanner scanner;
 
     public Engine() {
-        this.mochila = null;
+        this.mochila = new Mochila(3);
         this.salaCorrente = null;
         this.fim = false;
-        scanner = new Scanner(System.in);        
+        scanner = new Scanner(System.in);
         criaCenario();
     }
 
-    public Ferramenta getMochila() {
+    public Mochila getMochila() {
         return mochila;
-    }
-
-    public void setMochila(Ferramenta ferramenta) {
-        this.mochila = ferramenta;
     }
 
     public Sala getSalaCorrente() {
@@ -57,10 +53,14 @@ public abstract class Engine {
                     }
                     break;
                 case "inventario":
-                    System.out.println("Ferramenta disponível para ser usada: " + (mochila != null ? mochila.getNome() : "Nenhuma"));
+                    System.out.println("Ferramentas disponíveis para ser usada: "
+                            + (!mochila.isEmpty() ? mochila.listarNomesFerramentas() : "Nenhuma"));
                     break;
                 case "usa":
-                    if (salaCorrente.usa(tokens[1])) {
+                    Ferramenta f = getMochila().buscarFerramenta(tokens[1]);
+                    if (f == null) {
+                        System.out.println("Ferramenta não existe.");
+                    } else if (salaCorrente.usa(f)) {
                         System.out.println("Feito!!");
                         if (fim) {
                             System.out.println("Parabéns, você venceu!");

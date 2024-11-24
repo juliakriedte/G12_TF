@@ -12,8 +12,8 @@ public class HallEntrada extends Sala {
         this.getFerramentas().put(martelo.getNome(), martelo);
     }
 
-    @Override
-    public boolean usa(String nomeFerramenta) {
-        return false;
-    }
+    // @Override
+    // public boolean usa(String nomeFerramenta) {
+    // return false;
+    // }
 }
