@@ -1,13 +1,9 @@
 package basicas;
 
 import Jogo.Ferramentas.Chave;
-import basicas.Engine;
-import basicas.Ferramenta;
-import basicas.Objeto;
 import especificas.FerramentaDescartavel;
 import especificas.FerramentaDescartavelOculta;
 import especificas.FerramentaOculta;
-import especificas.ObjetoIluminavel;
 import especificas.ObjetoDescartavel;
 import especificas.ObjetoOculto;
 import java.util.ArrayList;
@@ -53,11 +49,7 @@ public abstract class Sala {
     public List<String> objetosDisponiveis() {
         List<String> descricoes = new ArrayList<>();
         for (Objeto obj : objetos.values()) {
-            if (obj instanceof ObjetoIluminavel){
-                if (((ObjetoIluminavel) obj).isVisivel()){
-                    descricoes.add(obj.getNome() + ": " + obj.getDescricao());
-                }
-            } else if (obj instanceof ObjetoOculto){
+            if (obj instanceof ObjetoOculto){
                 if (((ObjetoOculto) obj).isVisivel()){
                     descricoes.add(obj.getNome() + ": " + obj.getDescricao());
                 }

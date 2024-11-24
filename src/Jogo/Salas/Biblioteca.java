@@ -3,6 +3,7 @@ package Jogo.Salas;
 import Jogo.Ferramentas.Lanterna;
 import Jogo.Objetos.Espelho;
 import Jogo.Objetos.EstanteLivros;
+import Jogo.Objetos.Livro;
 import Jogo.Objetos.PoteDeAcucar;
 import basicas.Engine;
 import basicas.Ferramenta;
@@ -23,6 +24,8 @@ public class Biblioteca extends Sala
         this.getObjetos().put(espelho.getNome(), espelho);
         Objeto estanteLivros = new EstanteLivros();
         this.getObjetos().put(estanteLivros.getNome(), estanteLivros);
+        Objeto livro = new Livro();
+        this.getObjetos().put(livro.getNome(), livro);
     }
 
     @Override
