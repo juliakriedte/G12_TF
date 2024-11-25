@@ -22,9 +22,4 @@ public class Quadro extends Objeto {
 		}
 		return false;
 	}
-
-	@Override
-	public boolean usar(Ferramenta ferramenta) {
-		throw new UnsupportedOperationException("Parâmetros insuficientes");
-	}
 }

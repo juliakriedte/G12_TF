@@ -3,17 +3,17 @@ package especificas;
 import basicas.Objeto;
 
 public abstract class ObjetoOculto extends Objeto{
-    public boolean visivel;
+    //public boolean visivel;
     public ObjetoOculto(String nome, String descricaoAntesAcao, String descricaoDepoisAcao) {
         super(nome, descricaoAntesAcao, descricaoDepoisAcao);
-        this.visivel = false;
+        //this.visivel = false;
     }
 
-    public void revela(){
+    /*public void revela(){
         this.visivel = true;
     }
 
     public boolean isVisivel(){
         return visivel;
-    }
+    }*/
 }
