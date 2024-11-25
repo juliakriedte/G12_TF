@@ -1,4 +1,4 @@
-# A Busca pelo Diamante da Sabedoria 💎**
+# A Busca pelo Diamante da Sabedoria 💎
 
 ## 📋 Objetivo do Projeto
 
