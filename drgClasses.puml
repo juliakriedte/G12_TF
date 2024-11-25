@@ -3,9 +3,16 @@
 
 class Engine {
     -Sala salaCorrente
+    -Mochila mochila
+    -Scanner scanner
+    -boolean fim
     --
-    +void criaCenario()
-    +void jogar()
+    +Mochila getMochila()
+    +Sala getSalaCorrente()
+    +void setSalaCorrente()
+    +void indicaFimDeJogo()
+    +abstract void criaCenario()
+    +boolean joga()
 }
 
 class Mochila {
@@ -19,20 +26,37 @@ class Mochila {
 class Ferramenta {
     -String : nome
     --
-    +abstract void usarFerramenta()
+    +abstract boolean usarFerramenta()
 }
 
 class FerramentaDescartavel extends Ferramenta {
-    -Boolean foiUsado
+    -boolean usado
     --
-    +void usarFerramenta()
+    +boolean usarFerramenta()
+    +boolean isUsado()
 }
 
-class FerramentaComEnergia extends Ferramenta {
-    -int carga
+class FerramentaEnergia extends Ferramenta {
+    -double energiaAtual
+    -double capacidadeMaxima
     --
-    +void carregarFerramenta()
-    +void usarFerramenta()
+    +double getEnergiaAtual()
+    +double getCapacidadeMaxima()
+    +boolean isSemEnergia()
+    +void recarregar()
+    +boolean usarFerramenta()
+}
+
+class FerramentaDescartavelOculta extends Ferramenta {
+    -boolean usado
+    --
+    +boolean usarFerramenta()
+    +boolean isUsado()
+    +abstract boolean isVisivel()
+}
+
+class FerramentaOculta extends Ferramenta {
+    +abstract boolean isVisivel()
 }
 
 class Objeto {
@@ -41,7 +65,31 @@ class Objeto {
     -String descricaoAntesAcao
     -String descricaoDepoisAcao
     --
-    +abstract String descricao()
+    +String getDescricao()
+    +void setAcaoOk()
+    +boolean isAcaoOk()
+    +String getNome()
+    +abstract boolean usarFerramenta()
+}
+
+class ObjetoDescartavel extends Objeto {
+    -boolean usado
+    --
+    +boolean isUsado()
+    +boolean usarFerramenta()
+}
+
+class ObjetoIluminavel extends Objeto {
+    -boolean visivel
+    --
+    +void revela()
+    +boolean isVisivel()
+    +String getDescricao()
+    +boolean usarFerramenta()
+}
+
+class ObjetoOculto extends Objeto {
+    +abstract boolean isVisivel()
 }
 
 class Sala {
@@ -51,39 +99,49 @@ class Sala {
     -Map portas
     -Engine engine
     --
-    +void pegarFerramenta()
-    +void usarFerramenta()
-    +void ir()
+    +String getNome()
+    +Map getObjetos()
+    +Map getFerramentas()
+    +Map getPortas()
+    +Engine getEngine()
+    +List objetosDisponiveis()
+    +List ferramentasDisponiveis()
+    +List portasDisponiveis()
+    +String textoDescricao()
+    +Sala vai()
+    +boolean pegarFerramenta()
+    +boolean usarFerramenta()
     +void usarObjeto()
 }
 
 class SalaOculta extends Sala {
-    -Boolean destrancada
-    --
-    +void destrancar(String ferramenta)
-    +void entrar()
+    +abstract boolean isVisivel()
 }
 
 
 'Ferramentas
-class Lanterna extends FerramentaComEnergia
-class Chave extends FerramentaDescartavel
+class Lanterna extends FerramentaEnergia
+class Chave extends FerramentaDescartavelOculta
 class Martelo extends Ferramenta
+class Lapis extends FerramentaOculta
+class Lupa extends Ferramenta
 
 'Objetos
-class Pote extends Objeto
-class Espelho extends Objeto
-class Estatua extends Objeto
+class Pote extends ObjetoDescartavel
+class Espelho extends ObjetoIluminavel
+class Estatua extends ObjetoIluminavel
 class Pintura extends Objeto
-class Estante extends Objeto
+class Estante extends ObjetoIluminavel
+class Livro extends ObjetoOculto
 class Cofre extends Objeto
-class Pilhas extends Objeto
+class Pilha extends ObjetoDescartavel
 
 'Salas
 class Biblioteca extends Sala
 class Porao extends SalaOculta
-class SalaEstar extends Sala
+class SalaDeEstar extends Sala
 class Jardim extends Sala
+class Cozinha extends Sala
 class Quarto extends Sala
 
 Engine <|-- Jogo
