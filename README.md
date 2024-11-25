@@ -12,16 +12,16 @@ Você deve explorar as salas da mansão, coletar ferramentas, interagir com obje
 
 ## ⚔️ Como Funciona o Jogo
 
-O jogo é composto por um labirinto de 6 salas interligadas. O jogador deve coletar ferramentas, resolver enigmas e usar itens de forma estratégica para alcançar seu objetivo. O jogo também inclui uma mochila com capacidade limitada de 3 itens.
+O jogo é composto por um labirinto de salas interligadas. O jogador deve coletar ferramentas, resolver enigmas e usar itens de forma estratégica para alcançar seu objetivo. O jogo também inclui uma mochila com capacidade limitada de armazenar 3 itens.
 
 ## 🎮 Comandos do Jogo
 
 Aqui estão os comandos disponíveis para interação no jogo:
 
 1. **fim**Encerra o jogo imediatamente.
-2. **pega [item]**Pega um item da sala e adiciona à mochila. Exemplo: `pega Lanterna`.
+2. **pega [ferramenta]**Pega uma ferramenta da sala e adiciona à mochila. Exemplo: `pega Lanterna`.
 3. **inventario**Exibe os itens disponíveis na mochila para uso.
-4. **usa [item]**Usa um item da mochila ou da sala, conforme permitido. Exemplo: `usa Lanterna`.
+4. **usa [ferramenta]**Usa uma ferramenta da mochila ou da sala, conforme permitido. Exemplo: `usa Lanterna`.
 5. **vai [sala]**Muda para uma sala diferente. Exemplo: `vai Biblioteca` ou `vai Cozinha`.
 6. **[comando desconhecido]**
    Exibe uma mensagem de erro se o comando não for reconhecido.
@@ -37,27 +37,29 @@ Aqui estão os comandos disponíveis para interação no jogo:
 
 ### **Ferramentas**
 
-- **Lanterna**(Biblioteca) Revela mensagens e objetos ocultos em locais escuros. Quando usada, gasta 1 nivel de bateria. Se acabar a bateria, o jogo é perdido. Usar ela com uma pilha na sala, irá recarregá-la.
+- **Lanterna** (Biblioteca) Revela mensagens e objetos ocultos em locais escuros. Quando usada, gasta 1 nivel de bateria. Se acabar a bateria, o jogo é perdido. Usar ela com uma pilha na sala, irá recarregá-la.
 - **Martelo** (Quarto): Usado para quebrar objetos, como potes e estátuas.
-- **Chave de Ouro** (Jardim): Abre o cofre onde o Diamante está escondido.
+- **Chave de Ouro** (Oculto no Jardim): Abre o cofre onde o Diamante está escondido.
 - **Lupa** (Sala de Estar): Usada para examinar a pintura do Barão e ler o livro na Biblioteca.
+- **Lápis** (Oculto na Cozinha): Ferramenta não utilizada.
 
 ### **Objetos e Funcionalidades**
 
 - **Espelho** (Biblioteca): Revela uma pista falsa quando iluminado pela lanterna.
 - **Estante de Livros** (Biblioteca): Esconde um livro com uma pista essencial, visível apenas com a lanterna.
-- **Pote Misterioso** (Cozinha): Contém uma pista falsa ou ferramenta (lápis), precisa ser quebrado com o martelo.
+- **Livro** (Oculto na Biblioteca): O titulo da uma pista para o proximo passo, a partir da utilização da lupa.
+- **Pote Misterioso** (Cozinha): Contém uma ferramenta inútil (lápis), precisa ser quebrado com o martelo.
 - **Estátua do Barão** (Jardim): Revela a Chave de Ouro quando iluminada pela lanterna.
-- **Cofre Pequeno** (Porão): Guardado na Sala Secreta, protegido pela Chave de Ouro, contém o Diamante Escarlate.
+- **Cofre Pequeno** (Porão): Guardado na Sala Secreta, protegido pela Chave de Ouro, contém o Diamante da Sabedoria.
 - **Pintura do Barão** (Quarto): Ao ser examinada com a lupa, revela uma sala oculta.
-- **Pilhas** (Sala de Estar): Recarregam a lanterna.
+- **Pilha** (Sala de Estar): Recarregam a lanterna.
 
 ### **Caminho para Vencer**
 
 1. **Biblioteca**: Use a lanterna na estante para localizar o livro com uma pista essencial para o Jardim.
 2. **Jardim**: Ilumine a estátua com a lanterna para obter a Chave de Ouro.
 3. **Quarto**: Examine a pintura do Barão com a lupa para revelar uma sala secreta.
-4. **Porão**: Acesse a sala secreta e use a Chave de Ouro para abrir o cofre e obter o **Diamante Escarlate**.
+4. **Porão**: Acesse a sala secreta e use a Chave de Ouro para abrir o cofre e obter o **Diamante da Sabedoria**.
 
 ### **Características e Elementos Específicos**
 
@@ -70,20 +72,20 @@ Aqui estão os comandos disponíveis para interação no jogo:
 
 - **IDE**: Visual Studio Code
 - **Software de Versionamento**: GitHub
-- **Linguagem de Programação**: Java ☕
+- **Linguagem de Programação**: Java
 
 ## 📑 Requisitos
 
+Para rodar o jogo, você precisará dos seguintes componentes:
+
 - **Sistema Operacional**: Windows
-- **Java**: Não é necessário. O jogo é executável como um arquivo `.exe`.
-- **Extensão PlantUML**: Para visualizar o diagrama de classes, instale a extensão PlantUML.
+- **Java**: O jogo deve ser executado diretamente do código-fonte Java.
+- **Extensão PlantUML**: Para visualizar o diagrama de classes, instale a extensão PlantUML em sua IDE.
 
-## 🕹️ Como Iniciar o Jogo
+## 🛠️ Como Preparar e Iniciar o Jogo
 
-1. **Baixe o arquivo `.exe`** do jogo.
-2. **Clique duas vezes** no arquivo para iniciar o jogo.
-3. **Se aparecer um aviso de segurança**, confirme que deseja executar o arquivo.
-4. **Aproveite o jogo!**
+### Instale o Java Development Kit (JDK)
+
 
 ## 🗓️ Versão
 
@@ -96,7 +98,3 @@ Aqui estão os comandos disponíveis para interação no jogo:
 - Bernardo Garcia Fensterseifer
 - Julia Yume Nagahama Kriedte
 - Guilherme Sanches Cavazzotto
-
-### 🤗 Notas de Agradecimento
-
-Gostaríamos de agradecer a todos que contribuíram para a realização deste projeto. Agradecemos aos professores pelo apoio e ensinamentos, aos colegas pelo incentivo e troca de ideias. Nosso sincero obrigado a todos que ajudaram, direta ou indiretamente, no desenvolvimento deste trabalho!
