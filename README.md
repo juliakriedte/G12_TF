@@ -1,4 +1,4 @@
-#  A Busca pelo Diamante da Sabedoria 💎**
+# A Busca pelo Diamante da Sabedoria 💎**
 
 ## 📋 Objetivo do Projeto
 
@@ -18,22 +18,12 @@ O jogo é composto por um labirinto de 6 salas interligadas. O jogador deve cole
 
 Aqui estão os comandos disponíveis para interação no jogo:
 
-1. **fim**  
-   Encerra o jogo imediatamente.
-
-2. **pega [item]**  
-   Pega um item da sala e adiciona à mochila. Exemplo: `pega Lanterna`.
-
-3. **inventario**  
-   Exibe os itens disponíveis na mochila para uso.
-
-4. **usa [item]**  
-   Usa um item da mochila ou da sala, conforme permitido. Exemplo: `usa Lanterna`.
-
-5. **vai [sala]**  
-   Muda para uma sala diferente. Exemplo: `vai Biblioteca` ou `vai Cozinha`.
-
-6. **[comando desconhecido]**  
+1. **fim**Encerra o jogo imediatamente.
+2. **pega [item]**Pega um item da sala e adiciona à mochila. Exemplo: `pega Lanterna`.
+3. **inventario**Exibe os itens disponíveis na mochila para uso.
+4. **usa [item]**Usa um item da mochila ou da sala, conforme permitido. Exemplo: `usa Lanterna`.
+5. **vai [sala]**Muda para uma sala diferente. Exemplo: `vai Biblioteca` ou `vai Cozinha`.
+6. **[comando desconhecido]**
    Exibe uma mensagem de erro se o comando não for reconhecido.
 
 ### **Salas**
@@ -47,7 +37,7 @@ Aqui estão os comandos disponíveis para interação no jogo:
 
 ### **Ferramentas**
 
-- **Lanterna** (Biblioteca): Revela mensagens e objetos ocultos em locais escuros.
+- **Lanterna**(Biblioteca) Revela mensagens e objetos ocultos em locais escuros. Quando usada, gasta 1 nivel de bateria. Se acabar a bateria, o jogo é perdido. Usar ela com uma pilha na sala, irá recarregá-la.
 - **Martelo** (Quarto): Usado para quebrar objetos, como potes e estátuas.
 - **Chave de Ouro** (Jardim): Abre o cofre onde o Diamante está escondido.
 - **Lupa** (Sala de Estar): Usada para examinar a pintura do Barão e ler o livro na Biblioteca.
@@ -106,7 +96,6 @@ Aqui estão os comandos disponíveis para interação no jogo:
 - Bernardo Garcia Fensterseifer
 - Julia Yume Nagahama Kriedte
 - Guilherme Sanches Cavazzotto
-
 
 ### 🤗 Notas de Agradecimento
 

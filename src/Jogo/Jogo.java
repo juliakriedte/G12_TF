@@ -36,6 +36,7 @@ public class Jogo extends Engine
         jardim.getPortas().put(cozinha.getNome(), cozinha);
 
         quarto.getPortas().put(biblioteca.getNome(), biblioteca);
+        quarto.getPortas().put(porao.getNome(), porao);
 
         biblioteca.getPortas().put(quarto.getNome(), quarto);
         biblioteca.getPortas().put(salaDeEstar.getNome(), salaDeEstar);

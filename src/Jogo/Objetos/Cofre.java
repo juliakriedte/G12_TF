@@ -1,7 +1,6 @@
 package Jogo.Objetos;
 
 import Jogo.Ferramentas.Chave;
-import Jogo.Ferramentas.Martelo;
 import basicas.Ferramenta;
 import basicas.Objeto;
 
