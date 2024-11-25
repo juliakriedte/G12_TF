@@ -6,10 +6,11 @@ import especificas.FerramentaDescartavelOculta;
 */
 
 public class Chave extends FerramentaDescartavelOculta {
-    // Construtor
+    private static boolean visivel;
     public Chave() 
     {
         super("Chave");
+        visivel = false;
     }
 
     @Override
@@ -21,9 +22,13 @@ public class Chave extends FerramentaDescartavelOculta {
         return false;
     }
 
-    public void revela()
-    {
-        this.visivel = true;
+    public static void revela(){
+        visivel = true;
+    }
+
+    @Override
+    public boolean isVisivel(){
+        return visivel;
     }
 
 }

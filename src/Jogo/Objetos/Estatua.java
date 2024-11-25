@@ -11,15 +11,13 @@ public class Estatua extends ObjetoIluminavel {
 			  "A estatua possui um compartimento secreto com uma nova ferramenta.");
 	}
 
-	public boolean usar(Ferramenta ferramenta, Ferramenta c) {
+	public boolean usar(Ferramenta ferramenta) {
 		if (ferramenta instanceof Lanterna lanterna) {
 			if(!lanterna.isSemEnergia()){
-				if(c instanceof Chave){
-					this.setAcaoOk(true);
-					this.visivel = true;	
-					((Chave) c).revela();
-					return true;							
-				}
+				this.setAcaoOk(true);
+				this.visivel = true;	
+				Chave.revela();
+				return true;		
 				
 			} 
 			return false;	

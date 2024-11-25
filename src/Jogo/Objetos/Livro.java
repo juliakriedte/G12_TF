@@ -6,16 +6,16 @@ import especificas.ObjetoOculto;
 public class Livro extends ObjetoOculto {
 	private static boolean visivel;
     public Livro() {
-		super("Livro", "", "O título do livro é: 'Onde a terra floresce, o mistério aguarda'");
-		this.setAcaoOk(true);
+		super("Livro", "O livro precisa ser analisado.", "O título do livro é: 'Onde a terra floresce, o mistério aguarda'");
 		visivel = false;
 	}
 
 	public static void revela(){
-        this.visivel = true;
+        visivel = true;
     }
 
-    public static boolean isVisivel(){
+	@Override
+    public boolean isVisivel(){
         return visivel;
     }
 

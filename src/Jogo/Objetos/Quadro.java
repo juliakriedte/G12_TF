@@ -4,7 +4,6 @@ import Jogo.Ferramentas.Lupa;
 import Jogo.Salas.Porao;
 import basicas.Ferramenta;
 import basicas.Objeto;
-import basicas.Sala;
 
 public class Quadro extends Objeto {
 	public Quadro() {
@@ -12,13 +11,12 @@ public class Quadro extends Objeto {
               "Ao observar mais de perto, o quadro parece esconder o acesso a uma nova sala.");
 	}
 
-	public boolean usar(Ferramenta ferramenta, Sala s) {
+	@Override
+	public boolean usar(Ferramenta ferramenta) {
 		if (ferramenta instanceof Lupa) {
-			if(s instanceof Porao){
-				this.setAcaoOk(true);
-				((Porao) s).revela();
-				return true;				
-			}
+			this.setAcaoOk(true);
+			Porao.revela();
+			return true;
 		}
 		return false;
 	}

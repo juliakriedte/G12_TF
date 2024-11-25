@@ -4,13 +4,14 @@ import basicas.Engine;
 import basicas.Sala;
 
 public abstract class SalaOculta extends Sala{
-    public boolean visivel;
+    //public boolean visivel;
     public SalaOculta(String nome, Engine engine) {
         super(nome, engine);
-        this.visivel = false;
+        //this.visivel = false;
     }
-
-    public void revela(){
+    
+    public abstract boolean isVisivel();
+    /*public void revela(){
         this.visivel = true;
-    }
+    }*/
 }

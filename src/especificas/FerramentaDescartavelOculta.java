@@ -2,16 +2,16 @@ package especificas;
 
 import basicas.Ferramenta;
 
-public class FerramentaDescartavelOculta extends Ferramenta
+public abstract class FerramentaDescartavelOculta extends Ferramenta
 {
     public boolean usado;
-    public boolean visivel;
+    // public boolean visivel;
 
     public FerramentaDescartavelOculta(String nome) 
     {
         super(nome);
         this.usado = false;
-        this.visivel = false;
+        //this.visivel = false;
     }
 
     @Override
@@ -25,10 +25,5 @@ public class FerramentaDescartavelOculta extends Ferramenta
     }
 
     public boolean isUsado() { return usado; }
-    public boolean isVisivel(){ return visivel; }
-
-    public void revela()
-    {
-        this.visivel = true;
-    }
+    public abstract boolean isVisivel();
 }

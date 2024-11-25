@@ -11,9 +11,7 @@ public abstract class ObjetoOculto extends Objeto{
 
     /*public void revela(){
         this.visivel = true;
-    }
+    } */
 
-    public boolean isVisivel(){
-        return visivel;
-    }*/
+    public abstract boolean isVisivel();
 }

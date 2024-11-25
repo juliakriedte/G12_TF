@@ -6,6 +6,7 @@ import especificas.FerramentaDescartavelOculta;
 import especificas.FerramentaOculta;
 import especificas.ObjetoDescartavel;
 import especificas.ObjetoOculto;
+import especificas.SalaOculta;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -72,10 +73,8 @@ public abstract class Sala {
                     nomes.add(fer.getNome());
                 }
             } else if (fer instanceof FerramentaDescartavelOculta) {
-                if (fer instanceof FerramentaDescartavelOculta) {
-                    if (!(((Chave) fer).isUsado()) && (((FerramentaDescartavelOculta) fer).isVisivel())) {
-                        nomes.add(fer.getNome());
-                    }
+                if (!(((Chave) fer).isUsado()) && (((FerramentaDescartavelOculta) fer).isVisivel())) {
+                    nomes.add(fer.getNome());
                 }
             } else if (fer instanceof FerramentaDescartavel) {
                 if (((FerramentaDescartavel) fer).isUsado()) {
@@ -91,7 +90,13 @@ public abstract class Sala {
     public List<String> portasDisponiveis() {
         List<String> nomes = new ArrayList<>();
         for (Sala sala : portas.values()) {
-            nomes.add(sala.getNome());
+            if(sala instanceof SalaOculta){
+                if(((SalaOculta) sala).isVisivel()){
+                    nomes.add(sala.getNome()); 
+                }
+            } else {
+                nomes.add(sala.getNome());                
+            }
         }
         return nomes;
     }
