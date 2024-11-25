@@ -2,8 +2,8 @@ package Jogo.Salas;
 
 import Jogo.Ferramentas.Martelo;
 import basicas.Engine;
-import basicas.Sala;
 import basicas.Ferramenta;
+import basicas.Sala;
 
 public class HallEntrada extends Sala {
     public HallEntrada(Engine engine) {
@@ -12,8 +12,8 @@ public class HallEntrada extends Sala {
         this.getFerramentas().put(martelo.getNome(), martelo);
     }
 
-    @Override
-    public boolean usa(String nomeFerramenta) {
-        return false;
-    }
+    // @Override
+    // public boolean usa(String nomeFerramenta) {
+    // return false;
+    // }
 }

@@ -4,7 +4,6 @@ import Jogo.Ferramentas.Lanterna;
 import Jogo.Objetos.Espelho;
 import Jogo.Objetos.EstanteLivros;
 import Jogo.Objetos.Livro;
-import Jogo.Objetos.PoteDeAcucar;
 import basicas.Engine;
 import basicas.Ferramenta;
 import basicas.Objeto;
@@ -12,11 +11,9 @@ import basicas.Sala;
 
 // falta incrementar metodos pra entrar ir das salas(interagir com as portas)
 
-public class Biblioteca extends Sala 
-{
+public class Biblioteca extends Sala {
 
-    public Biblioteca(Engine engine) 
-    {
+    public Biblioteca(Engine engine) {
         super("Biblioteca", engine);
         Ferramenta lanterna = new Lanterna();
         this.getFerramentas().put(lanterna.getNome(), lanterna);
@@ -28,20 +25,20 @@ public class Biblioteca extends Sala
         this.getObjetos().put(livro.getNome(), livro);
     }
 
-    @Override
-    public boolean usa(String objeto) 
-    {
-        // ajustar dps
-        if (!this.getObjetos().containsKey(objeto)) {
-            return false;
-        }
-        Objeto pote = this.getObjetos().get(objeto);
-        boolean usou = pote.usar(this.getEngine().getMochila());
-        if (pote instanceof PoteDeAcucar) {
-            if (((PoteDeAcucar) pote).isUsado())
-            this.getEngine().indicaFimDeJogo();
-        }
-        return usou;
-    }
+    // @Override
+    // public boolean usa(String objeto)
+    // {
+    // // ajustar dps
+    // if (!this.getObjetos().containsKey(objeto)) {
+    // return false;
+    // }
+    // Objeto pote = this.getObjetos().get(objeto);
+    // boolean usou = pote.usar(this.getEngine().getMochila());
+    // if (pote instanceof PoteDeAcucar) {
+    // if (((PoteDeAcucar) pote).isUsado())
+    // this.getEngine().indicaFimDeJogo();
+    // }
+    // return usou;
+    // }
 
 }

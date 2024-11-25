@@ -49,15 +49,15 @@ public abstract class Sala {
     public List<String> objetosDisponiveis() {
         List<String> descricoes = new ArrayList<>();
         for (Objeto obj : objetos.values()) {
-            if (obj instanceof ObjetoOculto){
-                if (((ObjetoOculto) obj).isVisivel()){
+            if (obj instanceof ObjetoOculto) {
+                if (((ObjetoOculto) obj).isVisivel()) {
                     descricoes.add(obj.getNome() + ": " + obj.getDescricao());
                 }
-            } else if (obj instanceof ObjetoDescartavel){
-                if (!((ObjetoDescartavel) obj).isUsado()){
+            } else if (obj instanceof ObjetoDescartavel) {
+                if (!((ObjetoDescartavel) obj).isUsado()) {
                     descricoes.add(obj.getNome() + ": " + obj.getDescricao());
                 }
-            } else{
+            } else {
                 descricoes.add(obj.getNome() + ": " + obj.getDescricao());
             }
         }
@@ -67,22 +67,22 @@ public abstract class Sala {
     public List<String> ferramentasDisponiveis() {
         List<String> nomes = new ArrayList<>();
         for (Ferramenta fer : ferramentas.values()) {
-            if (fer instanceof FerramentaOculta){
-                if (((FerramentaOculta) fer).isVisivel()){
+            if (fer instanceof FerramentaOculta) {
+                if (((FerramentaOculta) fer).isVisivel()) {
                     nomes.add(fer.getNome());
                 }
-            } else if (fer instanceof FerramentaDescartavelOculta){
-                if (fer instanceof FerramentaDescartavelOculta){
-                    if(!(((Chave) fer).isUsado()) && (((FerramentaDescartavelOculta) fer).isVisivel())){
+            } else if (fer instanceof FerramentaDescartavelOculta) {
+                if (fer instanceof FerramentaDescartavelOculta) {
+                    if (!(((Chave) fer).isUsado()) && (((FerramentaDescartavelOculta) fer).isVisivel())) {
                         nomes.add(fer.getNome());
                     }
-                } 
-            } else if (fer instanceof FerramentaDescartavel){
-                if (((FerramentaDescartavel) fer).isUsado()){
-                        nomes.add(fer.getNome());
-                }                
+                }
+            } else if (fer instanceof FerramentaDescartavel) {
+                if (((FerramentaDescartavel) fer).isUsado()) {
+                    nomes.add(fer.getNome());
+                }
             } else {
-                nomes.add(fer.getNome());                
+                nomes.add(fer.getNome());
             }
         }
         return nomes;
@@ -99,7 +99,7 @@ public abstract class Sala {
     public boolean pega(String nomeFerramenta) {
         Ferramenta f = ferramentas.get(nomeFerramenta);
         if (f != null) {
-            engine.setMochila(f);
+            engine.getMochila().adicionarFerramenta(f);
             ferramentas.remove(nomeFerramenta);
             return true;
         }
@@ -113,10 +113,20 @@ public abstract class Sala {
     public String textoDescricao() {
         StringBuilder descricao = new StringBuilder("Você está no " + nome + "\n");
         descricao.append(objetos.isEmpty() ? "Não há objetos na sala\n" : "Objetos: " + objetosDisponiveis() + "\n");
-        descricao.append(ferramentas.isEmpty() ? "Não há ferramentas na sala\n" : "Ferramentas: " + ferramentasDisponiveis() + "\n");
+        descricao.append(ferramentas.isEmpty() ? "Não há ferramentas na sala\n"
+                : "Ferramentas: " + ferramentasDisponiveis() + "\n");
         descricao.append("Portas: " + portasDisponiveis() + "\n");
         return descricao.toString();
     }
 
-    public abstract boolean usa(String nomeFerramenta);
+    public boolean usa(Ferramenta f) {
+        boolean usado = false;
+        if (!f.usar()) {
+            return false;
+        }
+        for (Objeto obj : getObjetos().values()) {
+            usado |= obj.usar(f);
+        }
+        return usado;
+    }
 }

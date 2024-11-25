@@ -15,6 +15,10 @@ public class Mochila {
         this.ferramentas = new ArrayList<>();
     }
 
+    public boolean isEmpty() {
+        return ferramentas.isEmpty();
+    }
+
     public boolean adicionarFerramenta(Ferramenta ferramenta) {
         if (ferramenta == null) {
             throw new IllegalArgumentException("Ferramenta não pode ser nula.");
@@ -48,5 +52,19 @@ public class Mochila {
 
     public List<Ferramenta> getFerramentas() {
         return new ArrayList<>(ferramentas);
+    }
+
+    public Ferramenta buscarFerramenta(String nomeFerramenta) {
+        if (nomeFerramenta == null || nomeFerramenta.isEmpty()) {
+            throw new IllegalArgumentException("Nome da ferramenta não pode ser nulo ou vazio.");
+        }
+
+        for (Ferramenta ferramenta : ferramentas) {
+            if (ferramenta.getNome().equalsIgnoreCase(nomeFerramenta)) {
+                return ferramenta;
+            }
+        }
+
+        return null; // Retorna null se a ferramenta não for encontrada
     }
 }

@@ -1,7 +1,6 @@
 package Jogo.Objetos;
 import Jogo.Ferramentas.Lanterna;
 import basicas.Ferramenta;
-import basicas.Objeto;
 import especificas.ObjetoIluminavel;
 
 public class EstanteLivros extends ObjetoIluminavel {
@@ -10,15 +9,11 @@ public class EstanteLivros extends ObjetoIluminavel {
 			 "Você encontrou um livro que parece conter uma pista importante."); 
 	}
 	
-	public boolean usar(Ferramenta ferramenta, Objeto l) {
+	@Override
+	public boolean usar(Ferramenta ferramenta) {
 		if (ferramenta instanceof Lanterna lanterna) {
 			if(!lanterna.isSemEnergia()){
-				if(l instanceof Livro){
-					this.setAcaoOk(true);
-					this.visivel = true;	
-					((Livro) l).revela();
-					return true;					
-				}
+				
 			} 
 			return false;	
 		}

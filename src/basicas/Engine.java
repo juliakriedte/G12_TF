@@ -2,26 +2,24 @@ package basicas;
 
 import java.util.Scanner;
 
+import Jogo.Ferramentas.Lanterna;
+
 public abstract class Engine {
-    private Ferramenta mochila;
+    private Mochila mochila;
     private Sala salaCorrente;
     private boolean fim;
     private Scanner scanner;
 
     public Engine() {
-        this.mochila = null;
+        this.mochila = new Mochila(3);
         this.salaCorrente = null;
         this.fim = false;
-        scanner = new Scanner(System.in);        
+        scanner = new Scanner(System.in);
         criaCenario();
     }
 
-    public Ferramenta getMochila() {
+    public Mochila getMochila() {
         return mochila;
-    }
-
-    public void setMochila(Ferramenta ferramenta) {
-        this.mochila = ferramenta;
     }
 
     public Sala getSalaCorrente() {
@@ -38,8 +36,22 @@ public abstract class Engine {
 
     public abstract void criaCenario();
 
-    public void joga() {
+    /// Retorna true na vitoria, false na derrota
+    public boolean joga() {
         while (!fim) {
+            Ferramenta fe = getMochila().buscarFerramenta("Lanterna");
+            if (fe != null) {
+                Lanterna l = (Lanterna) fe;
+                if (l.isSemEnergia()) {
+                    System.out.println("A energia da sua lanterna acabou.");
+                    System.out.println("Você, frustrado, joga ela na parede com força.");
+                    System.out.println(
+                            "Ops. Você deu azar. A parede que você tacou estava muito fragil e a casa desmorona em cima de você.");
+                    System.out.println("Você perdeu. Tente novamente.");
+                    System.out.println("Na próxima, não fique sem bateria.");
+                    return false;
+                }
+            }
             System.out.println("-------------------------");
             System.out.println(salaCorrente.textoDescricao());
             System.out.print("O que você deseja fazer? ");
@@ -57,11 +69,14 @@ public abstract class Engine {
                     }
                     break;
                 case "inventario":
-                    System.out.println("Ferramenta disponível para ser usada: " + (mochila != null ? mochila.getNome() : "Nenhuma"));
+                    System.out.println("Ferramentas disponíveis para ser usada: "
+                            + (!mochila.isEmpty() ? mochila.listarNomesFerramentas() : "Nenhuma"));
                     break;
                 case "usa":
-                    if (salaCorrente.usa(tokens[1])) {
-                        System.out.println("Feito!!");
+                    Ferramenta f = getMochila().buscarFerramenta(tokens[1]);
+                    if (f == null) {
+                        System.out.println("Ferramenta não existe.");
+                    } else if (salaCorrente.usa(f)) {
                         if (fim) {
                             System.out.println("Parabéns, você venceu!");
                         }
@@ -84,5 +99,6 @@ public abstract class Engine {
         }
         System.out.println("Jogo encerrado!");
         scanner.close();
+        return true;
     }
 }
